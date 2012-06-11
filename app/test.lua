@@ -10,8 +10,10 @@ local JSON = require("cjson")
 local zlib = require("zlib")
 
 local Redis = require("resty.redis")
+local logger = require("logger")
 
 function hello(req, resp, name)
+    logger:e("hello request started!")
     if req.method=='GET' then
         -- resp:writeln('Host: ' .. req.host)
         -- resp:writeln('Hello, ' .. ngx.unescape_uri(name))
@@ -26,5 +28,6 @@ function hello(req, resp, name)
         resp.headers['Content-Type'] = 'application/json'
         resp:writeln(JSON.encode(req.post_args))
     end
+    logger:e("hello request completed!")
 end
 
