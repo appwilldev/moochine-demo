@@ -1,3 +1,4 @@
 *.pyc
 nginx_runtime
 p-*
+.DS_Store
