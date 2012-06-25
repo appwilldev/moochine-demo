@@ -1,4 +1,6 @@
-penResty 安装
+# 一、安装配置
+
+## 1.1 OpenResty 安装
 参看：http://openresty.org/#Installation
 
 ## 1.2 Moochine 安装
@@ -172,4 +174,3 @@ end
 1. http://wiki.nginx.org/HttpCoreModule 
 1. http://openresty.org
 1. https://github.com/appwilldev/moochine
-
