@@ -30,3 +30,6 @@ function hello(req, resp, name)
     logger:e("hello request completed!")
 end
 
+function ltp(req, resp)
+    resp:ltp("ltp.html", {v="hello, moochine!"})
+end
