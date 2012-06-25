@@ -5,7 +5,7 @@
 --
 
 require 'mch.router'
-mch.router.setup('MoochineWeb')
+mch.router.setup('moochine-demo')
 
 ---------------------------------------------------------------------
 

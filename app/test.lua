@@ -7,9 +7,8 @@
 module("test", package.seeall)
 
 local JSON = require("cjson")
-local zlib = require("zlib")
-
 local Redis = require("resty.redis")
+
 local logger = require("logger")
 
 function hello(req, resp, name)
