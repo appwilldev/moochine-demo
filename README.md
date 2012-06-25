@@ -45,6 +45,9 @@
     |-- conf  #配置目录
     |    `-- nginx.conf  #Nginx配置文件模版
     |
+    |-- templates  #ltp模版目录
+    |    `-- ltp.html  #ltp模版文件
+    |
     `-- nginx_runtime #Nginx运行时 目录。这个目录下的文件由程序自动生成，无需手动管理。
         |-- conf
         |   `-- p-nginx.conf #Nginx配置文件(自动生成)，执行 ./bin/start.sh 时会根据conf/nginx.conf 自动生成。
@@ -64,6 +67,7 @@
 
 ## 2.4 测试
     curl "http://localhost:9800/hello?name=xxxxxxxx"
+    curl "http://localhost:9800/ltp"
     tail -f nginx_runtime/logs/access.log  #查看 Nginx 访问日志的输出
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
     
