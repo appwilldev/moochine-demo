@@ -49,7 +49,7 @@
     |-- templates  #ltp模版目录
     |    `-- ltp.html  #ltp模版文件
     |
-    `-- nginx_runtime #Nginx运行时 目录。这个目录下的文件由程序自动生成，无需手动管理。
+    `-- nginx_runtime #Nginx运行时目录。这个目录下的文件由程序自动生成，无需手动管理。
         |-- conf
         |   `-- p-nginx.conf #Nginx配置文件(自动生成)，执行 ./bin/start.sh 时会根据conf/nginx.conf 自动生成。
         `-- logs #Nginx运行时日志目录
@@ -126,25 +126,25 @@
 以下属性值的详细解释，可以通过 http://wiki.nginx.org/HttpLuaModule 和 http://wiki.nginx.org/HttpCoreModule 查找到。
 
     --属性
-    method=ngx.var.request_method
-    schema=ngx.var.schema
-    host=ngx.var.host
-    hostname=ngx.var.hostname
-    uri=ngx.var.request_uri
-    path=ngx.var.uri
-    filename=ngx.var.request_filename
-    query_string=ngx.var.query_string
-    headers=ngx.req.get_headers()
-    user_agent=ngx.var.http_user_agent
-    remote_addr=ngx.var.remote_addr
-    remote_port=ngx.var.remote_port
-    remote_user=ngx.var.remote_user
-    remote_passwd=ngx.var.remote_passwd
-    content_type=ngx.var.content_type
-    content_length=ngx.var.content_length
-    uri_args=ngx.req.get_uri_args()
-    post_args=ngx.req.get_post_args()
-    socket=ngx.req.socket
+    method=ngx.var.request_method           -- http://wiki.nginx.org/HttpCoreModule#.24request_method
+    schema=ngx.var.schema                   -- http://wiki.nginx.org/HttpCoreModule#.24scheme
+    host=ngx.var.host                       -- http://wiki.nginx.org/HttpCoreModule#.24host
+    hostname=ngx.var.hostname               -- http://wiki.nginx.org/HttpCoreModule#.24hostname
+    uri=ngx.var.request_uri                 -- http://wiki.nginx.org/HttpCoreModule#.24request_uri
+    path=ngx.var.uri                        -- http://wiki.nginx.org/HttpCoreModule#.24uri
+    filename=ngx.var.request_filename       -- http://wiki.nginx.org/HttpCoreModule#.24request_filename
+    query_string=ngx.var.query_string       -- http://wiki.nginx.org/HttpCoreModule#.24query_string
+    headers=ngx.req.get_headers()           -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers
+    user_agent=ngx.var.http_user_agent      -- http://wiki.nginx.org/HttpCoreModule#.24http_HEADER
+    remote_addr=ngx.var.remote_addr         -- http://wiki.nginx.org/HttpCoreModule#.24remote_addr
+    remote_port=ngx.var.remote_port         -- http://wiki.nginx.org/HttpCoreModule#.24remote_port
+    remote_user=ngx.var.remote_user         -- http://wiki.nginx.org/HttpCoreModule#.24remote_user
+    remote_passwd=ngx.var.remote_passwd     -- http://wiki.nginx.org/HttpCoreModule#.24remote_passwd
+    content_type=ngx.var.content_type       -- http://wiki.nginx.org/HttpCoreModule#.24content_type
+    content_length=ngx.var.content_length   -- http://wiki.nginx.org/HttpCoreModule#.24content_length
+    uri_args=ngx.req.get_uri_args()         -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args
+    post_args=ngx.req.get_post_args()       -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args
+    socket=ngx.req.socket                   -- http://wiki.nginx.org/HttpLuaModule#ngx.req.socket
     
     --方法
     request:read_body()
@@ -155,7 +155,7 @@
 
 ## 3.4 response对象的属性和方法
     --属性
-    headers=ngx.header
+    headers=ngx.header                      -- http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER
     
     --方法
     response:write(content)
@@ -179,3 +179,4 @@
 1. http://wiki.nginx.org/HttpCoreModule 
 1. http://openresty.org
 1. https://github.com/appwilldev/moochine
+
