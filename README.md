@@ -2,6 +2,7 @@
 
 ## 1.1 OpenResty 安装
 参看：http://openresty.org/#Installation
+编译时选择luajit, `./configure --with-luajit`
 
 ## 1.2 Moochine 安装
     #Checkout Moochine 代码
