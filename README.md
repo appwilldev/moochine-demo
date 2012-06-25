@@ -134,7 +134,6 @@
     path=ngx.var.uri                        -- http://wiki.nginx.org/HttpCoreModule#.24uri
     filename=ngx.var.request_filename       -- http://wiki.nginx.org/HttpCoreModule#.24request_filename
     query_string=ngx.var.query_string       -- http://wiki.nginx.org/HttpCoreModule#.24query_string
-    headers=ngx.req.get_headers()           -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers
     user_agent=ngx.var.http_user_agent      -- http://wiki.nginx.org/HttpCoreModule#.24http_HEADER
     remote_addr=ngx.var.remote_addr         -- http://wiki.nginx.org/HttpCoreModule#.24remote_addr
     remote_port=ngx.var.remote_port         -- http://wiki.nginx.org/HttpCoreModule#.24remote_port
@@ -142,15 +141,17 @@
     remote_passwd=ngx.var.remote_passwd     -- http://wiki.nginx.org/HttpCoreModule#.24remote_passwd
     content_type=ngx.var.content_type       -- http://wiki.nginx.org/HttpCoreModule#.24content_type
     content_length=ngx.var.content_length   -- http://wiki.nginx.org/HttpCoreModule#.24content_length
+    
+    headers=ngx.req.get_headers()           -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers
     uri_args=ngx.req.get_uri_args()         -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args
     post_args=ngx.req.get_post_args()       -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args
     socket=ngx.req.socket                   -- http://wiki.nginx.org/HttpLuaModule#ngx.req.socket
     
     --方法
-    request:read_body()
+    request:read_body()                     -- http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
     request:get_cookie(key, decrypt)
-    request:rewrite(uri, jump)
-    request:set_uri_args(args)
+    request:rewrite(uri, jump)              -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri
+    request:set_uri_args(args)              -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri_args
     
 
 ## 3.4 response对象的属性和方法
@@ -160,7 +161,7 @@
     --方法
     response:write(content)
     response:writeln(content)
-    response:redirect(url, status)
+    response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
     response:set_cookie(key, value, encrypt, duration, path)
     response:ltp(template,data)
     
