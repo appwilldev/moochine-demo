@@ -107,15 +107,15 @@
             -- resp:writeln('name, ' .. req.uri_args['name'])
             resp.headers['Content-Type'] = 'application/json'
             resp:writeln(JSON.encode(req.uri_args))
-    
+
             resp:writeln({{'a','c',{'d','e', {'f','b'})
-    elseif req.method=='POST' then
-        -- resp:writeln('POST to Host: ' .. req.host)
-        req:read_body()
-        resp.headers['Content-Type'] = 'application/json'
-        resp:writeln(JSON.encode(req.post_args))
-    end 
-end
+        elseif req.method=='POST' then
+            -- resp:writeln('POST to Host: ' .. req.host)
+            req:read_body()
+            resp.headers['Content-Type'] = 'application/json'
+            resp:writeln(JSON.encode(req.post_args))
+        end 
+    end
 
 ## 3.3 request对象的属性和方法
 以下属性值的详细解释，可以通过 http://wiki.nginx.org/HttpLuaModule 和 http://wiki.nginx.org/HttpCoreModule 查找到。
