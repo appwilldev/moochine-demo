@@ -1,3 +1,5 @@
+./bin/generate_nginx_conf.sh
+
 PWD=`pwd`
 NGINX_FILES=$PWD"/nginx_runtime"
 
