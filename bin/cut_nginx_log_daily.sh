@@ -5,7 +5,7 @@
 #00 00 * * * /bin/bash /path/to/moochine-demo/bin/cut_nginx_log_daily.sh
 
 # Set App Home
-moochine_app_home="/Users/lindemiao/Projects/git_server/moochine-demo"
+moochine_app_home="/path/to/moochine-demo"
 
 #/////////////////////////////////////////////////////////////////////////////////////
 
