@@ -22,7 +22,7 @@ for log_file in $log_files; do
     if [[ $log_file == *.log* ]]; then
         #echo $log_file
         daily_log_file=${log_file//.log/.log.$date}
-        #echo mv ${logs_path}/$log_file ${logs_path}/$year/$month/$daily_log_file
+        echo mv ${logs_path}/$log_file ${logs_path}/$year/$month/$daily_log_file
         mv ${logs_path}/$log_file ${logs_path}/$year/$month/$daily_log_file
     fi  
 done
