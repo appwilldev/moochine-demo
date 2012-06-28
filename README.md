@@ -19,7 +19,7 @@
     #使环境变量生效
     source ~/.bashrc
     
-    #将以上三个环境变量 加到 ~/.bashrc 或者~/.profile 里，下次登陆自动生效
+    #将以上两个环境变量 加到 ~/.bashrc 或者~/.profile 里，下次登陆自动生效
     vim ~/.bashrc
     
 
