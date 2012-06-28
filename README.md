@@ -41,7 +41,8 @@
     |   |-- debug.sh #关闭服务->清空error log->启动服务->查看error log
     |   |-- reload.sh #平滑重载配置
     |   |-- start.sh #启动
-    |   `-- stop.sh #关闭
+    |   |-- stop.sh #关闭
+    |   `-- cut_nginx_log_daily.sh #Nginx日志切割脚本
     |
     |-- conf  #配置目录
     |    `-- nginx.conf  #Nginx配置文件模版
