@@ -1,15 +1,20 @@
-# 一、安装配置
+# OpenResty(ngx_lua)+Moochine 完整实例
 
-## 1.1 OpenResty 安装
+## 说明
+这个项目演示了如何使用OpenResty和Moochine开发Web应用。
+
+## 一、安装配置
+
+### 1.1 OpenResty 安装
 参看：http://openresty.org/#Installation
 编译时选择luajit, `./configure --with-luajit`
 
-## 1.2 Moochine 安装
+### 1.2 Moochine 安装
     #Checkout Moochine 代码
     git clone git://github.com/appwilldev/moochine.git 
     
 
-## 1.3 配置环境变量
+### 1.3 配置环境变量
     #设置OpenResty环境变量
     export OPENRESTY_HOME=/usr/local/openresty
     
@@ -23,12 +28,12 @@
     vim ~/.bashrc
     
 
-# 二、示例(模版)程序
-## 2.1 Checkout 示例代码
+## 二、示例(模版)程序
+### 2.1 Checkout 示例代码
     git clone git://github.com/appwilldev/moochine-demo.git
     cd moochine-demo
     
-## 2.2 程序目录结构
+### 2.2 程序目录结构
     
     moochine-demo #程序根目录
     |
@@ -59,7 +64,7 @@
             `-- nginx.pid #Nginx进程ID文件
     
 
-## 2.3 启动/关闭/重载/重启 方法
+### 2.3 启动/关闭/重载/重启 方法
     ./bin/start.sh #启动
     ./bin/stop.sh #停止
     ./bin/reload.sh #平滑重载配置
@@ -67,15 +72,15 @@
 
 注意：以上命令只能在程序根目录执行，类似 `./bin/xxx.sh` 的方式。    
 
-## 2.4 测试
+### 2.4 测试
     curl "http://localhost:9800/hello?name=xxxxxxxx"
     curl "http://localhost:9800/ltp"
     tail -f nginx_runtime/logs/access.log  #查看 Nginx 访问日志的输出
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
     
 
-# 三、开发Web应用
-## 3.1 URL Routing: app/routing.lua
+## 三、开发Web应用
+### 3.1 URL Routing: app/routing.lua
     #!/usr/bin/env lua
     -- -*- lua -*-
     -- copyright: 2012 Appwill Inc.
@@ -92,7 +97,7 @@
     ---------------------------------------------------------------------
     
 
-## 3.2 请求处理函数：app/test.lua
+### 3.2 请求处理函数：app/test.lua
 请求处理函数接收2个参数，request和response，分别对应HTTP的request和response。从request对象拿到客户端发送过来的数据，通过response对象返回数据。
 
     #!/usr/bin/env lua
@@ -123,7 +128,7 @@
         end 
     end
 
-## 3.3 request对象的属性和方法
+### 3.3 request对象的属性和方法
 以下属性值的详细解释，可以通过 http://wiki.nginx.org/HttpLuaModule 和 http://wiki.nginx.org/HttpCoreModule 查找到。
 
     --属性
@@ -155,7 +160,7 @@
     request:set_uri_args(args)              -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri_args
     
 
-## 3.4 response对象的属性和方法
+### 3.4 response对象的属性和方法
     --属性
     headers=ngx.header                      -- http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER
     
@@ -167,7 +172,7 @@
     response:ltp(template,data)
     
 
-## 3.5 打印调试日志
+### 3.5 打印调试日志
     local logger = require("logger“)
     logger:e(info)
 
@@ -176,7 +181,7 @@
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
     
 
-# 四、参考 
+## 四、参考 
 1. http://wiki.nginx.org/HttpLuaModule 
 1. http://wiki.nginx.org/HttpCoreModule 
 1. http://openresty.org
