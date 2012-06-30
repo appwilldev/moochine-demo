@@ -1,6 +1,5 @@
 # OpenResty(ngx_lua)+Moochine 完整实例
 
-## 说明
 这个项目演示了如何使用OpenResty和Moochine开发Web应用。
 
 ## 一、安装配置
