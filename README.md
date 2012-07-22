@@ -54,9 +54,13 @@
     |-- templates  #ltp模版目录
     |    `-- ltp.html  #ltp模版文件
     |
+    |-- static  #静态文件(图片,css,js等)目录
+    |    `-- main.js  #js文件
+    |
     `-- nginx_runtime #Nginx运行时目录。这个目录下的文件由程序自动生成，无需手动管理。
         |-- conf
         |   `-- p-nginx.conf #Nginx配置文件(自动生成)，执行 ./bin/start.sh 时会根据conf/nginx.conf 自动生成。
+        |
         `-- logs #Nginx运行时日志目录
             |-- access.log #Nginx 访问日志
             |-- error.log #Nginx 错误日志
