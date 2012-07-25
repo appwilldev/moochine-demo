@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # set global variables
 #export OPENRESTY_HOME=/usr/local/openresty
 #export MOOCHINE_HOME=/your/path/to/moochine

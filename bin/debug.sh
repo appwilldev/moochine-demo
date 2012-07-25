@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PWD=`pwd`
 NGINX_FILES=$PWD"/nginx_runtime"
 

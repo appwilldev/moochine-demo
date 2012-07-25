@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ./bin/generate_nginx_conf.sh
 
 PWD=`pwd`
