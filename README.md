@@ -36,8 +36,10 @@
     
     moochine-demo #程序根目录
     |
+    |-- routing.lua # URL Routing配置
+    |-- application.lua # moochine app 描述文件
+    |
     |-- app #应用目录
-    |   |-- routing.lua #URL Routing配置
     |   |-- test.lua #请求处理函数
     |   `-- logger.lua  #调试日志打印
     |
@@ -83,15 +85,15 @@
     
 
 ## 三、开发Web应用
-### 3.1 URL Routing: app/routing.lua
+### 3.1 URL Routing: routing.lua
     #!/usr/bin/env lua
     -- -*- lua -*-
     -- copyright: 2012 Appwill Inc.
     -- author : ldmiao
     --
     
-    require 'mch.router'
-    mch.router.setup('moochine-demo') --moochine-demo 必须和`程序根目录名` 保持一致
+    local router = require('mch.router')
+    router.setup('moochine-demo') --moochine-demo 必须和`nginx.conf`内的 MOOCHINE_APP_NAME 保持一致
     
     ---------------------------------------------------------------------
     
@@ -182,9 +184,23 @@
 查看调试日志
 
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
-    
 
-## 四、参考 
+## 四、Multi-App 与 Sub-App
+
+### 4.1 multi-app
+    多个 moochine-app 可以运行与同一nginx进程中，只要将本例子中nginx.conf内moochine-app相关段配置多份即可。
+
+### 4.2 sub-app
+    某moochine-app可以作为另一app的sub-app运行，在主app的application.lua内配置：
+
+    subapps={
+        subapp1 = {path="/path/to/subapp1", config={}},
+        ...
+    }
+
+    其中sub-app的名字(比如subapp1)要跟该subapp内routing.lua内使用的名字对应。
+
+## 五、参考 
 1. http://wiki.nginx.org/HttpLuaModule 
 1. http://wiki.nginx.org/HttpCoreModule 
 1. http://openresty.org

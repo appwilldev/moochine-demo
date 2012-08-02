@@ -4,8 +4,8 @@
 -- author : ldmiao
 --
 
-require 'mch.router'
-mch.router.setup('moochine-demo')
+local router = require('mch.router')
+router.setup('moochine-demo')
 
 ---------------------------------------------------------------------
 
