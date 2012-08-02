@@ -1,4 +1,8 @@
-
+--
+-- application configuration
+--
+-- var in this file can be got by "mch.util.get_config(key)"
+--
 
 debug={
     on=true,
@@ -10,7 +14,7 @@ config={
 }
 
 subapps={
-    demo3 = {path="/path/to/another/moochineapp", config={}},
+    -- subapp_name = {path="/path/to/another/moochineapp", config={}},
 }
 
 
