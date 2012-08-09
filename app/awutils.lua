@@ -444,6 +444,18 @@ function isNotNull(v)
     return not isNull(v)
 end
 
+function isNotEmptyString(...)
+    local args = {...}
+    local v = nil
+    for i=1,table.maxn(args) do
+        v = args[i]
+        if v==nil or v==ngx.null or type(v)~='string' or string.len(v)==0 then
+            return false
+        end
+    end
+    return true
+end
+
 function traceback()
     logger:e(require("debug").traceback())
 end
