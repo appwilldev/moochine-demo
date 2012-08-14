@@ -93,7 +93,7 @@
     --
     
     local router = require('mch.router')
-    router.setup('moochine-demo') --moochine-demo 必须和`nginx.conf`内的 MOOCHINE_APP_NAME 保持一致
+    router.setup()
     
     ---------------------------------------------------------------------
     
@@ -160,6 +160,10 @@
     
     --方法
     request:read_body()                     -- http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
+    request:get_uri_arg(name, default)
+    request:get_post_arg(name, default)
+    request:get_arg(name, default)
+
     request:get_cookie(key, decrypt)
     request:rewrite(uri, jump)              -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri
     request:set_uri_args(args)              -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri_args
