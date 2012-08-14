@@ -5,7 +5,7 @@
 --
 
 local router = require('mch.router')
-router.setup('moochine-demo')
+router.setup()
 
 ---------------------------------------------------------------------
 

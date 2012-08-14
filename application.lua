@@ -5,7 +5,7 @@
 --
 
 debug={
-    on=true,
+    on=false,
     to="response", -- "ngx.log"
 }
 
