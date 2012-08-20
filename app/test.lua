@@ -36,7 +36,7 @@ function longtext(req, resp)
     resp:finish()
     resp:writeln("yyyyyyyy!")
     
-    local red = Redis1:new()
+    local red = Redis:new()
     local ok, err = red:connect("127.0.0.1", 6379)
     if not ok then
         resp:writeln({"failed to connect: ", err})
