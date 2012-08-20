@@ -174,12 +174,12 @@
     headers=ngx.header                      -- http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER
     
     --方法
+    response:set_cookie(key, value, encrypt, duration, path)
     response:write(content)
     response:writeln(content)
-    response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
-    response:set_cookie(key, value, encrypt, duration, path)
     response:ltp(template,data)
-    
+    response:finish()                       -- http://wiki.nginx.org/HttpLuaModule#ngx.eof
+    response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
 
 ### 3.5 打印调试日志
     local logger = require("logger“)
