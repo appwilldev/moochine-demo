@@ -30,6 +30,14 @@ function hello(req, resp, name)
     logger:e("hello request completed!")
 end
 
+function longtext(req, resp)
+    resp:writeln(string.rep("x", 1000000))
+    resp:writeln("end!")
+    resp:finish()
+    resp:writeln("yyyyyyyy!")
+end
+
 function ltp(req, resp)
     resp:ltp("ltp.html", {v="hello, moochine!"})
 end
+
