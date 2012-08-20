@@ -179,6 +179,7 @@
     response:writeln(content)
     response:ltp(template,data)
     response:finish()                       -- http://wiki.nginx.org/HttpLuaModule#ngx.eof
+    response:is_finished()
     response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
 
 ### 3.5 打印调试日志

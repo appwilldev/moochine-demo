@@ -35,6 +35,21 @@ function longtext(req, resp)
     resp:writeln("end!")
     resp:finish()
     resp:writeln("yyyyyyyy!")
+    
+    local red = Redis1:new()
+    local ok, err = red:connect("127.0.0.1", 6379)
+    if not ok then
+        resp:writeln({"failed to connect: ", err})
+    end
+    
+    for i=1,1000 do
+        local k = "foo"..tostring(i)
+        red:set(k, "bar"..tostring(i))
+        local v = red:get(k)
+        ngx.log(ngx.ERR, "i:"..tostring(i), ", v:", v)
+        
+        ngx.sleep(1)
+    end
 end
 
 function ltp(req, resp)
