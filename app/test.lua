@@ -30,18 +30,20 @@ function hello(req, resp, name)
     logger:e("hello request completed!")
 end
 
+
 function longtext(req, resp)
-    resp:writeln(string.rep("x", 1000000))
-    resp:writeln("end!")
+    local a = string.rep("xxxxxxxxxx", 100000)
+    resp:writeln(a)
     resp:finish()
-    resp:writeln("yyyyyyyy!")
     
     local red = Redis:new()
     local ok, err = red:connect("127.0.0.1", 6379)
     if not ok then
         resp:writeln({"failed to connect: ", err})
     end
-    
+
+    --red:set_timeout(30)
+
     for i=1,1000 do
         local k = "foo"..tostring(i)
         red:set(k, "bar"..tostring(i))

@@ -178,9 +178,11 @@
     response:write(content)
     response:writeln(content)
     response:ltp(template,data)
+    response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
+
     response:finish()                       -- http://wiki.nginx.org/HttpLuaModule#ngx.eof
     response:is_finished()
-    response:redirect(url, status)          -- http://wiki.nginx.org/HttpLuaModule#ngx.redirect
+    response:defer(func, ...)               -- 在response返回后执行
 
 ### 3.5 打印调试日志
     local logger = require("logger“)
