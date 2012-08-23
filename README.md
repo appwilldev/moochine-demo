@@ -51,7 +51,7 @@
     |   `-- cut_nginx_log_daily.sh #Nginx日志切割脚本
     |
     |-- conf  #配置目录
-    |    `-- nginx.conf  #Nginx配置文件模版
+    |    `-- nginx.conf  #Nginx配置文件模版。需要配置 `set $MOOCHINE_APP_NAME 'moochine-demo';` 自己的名字。
     |
     |-- templates  #ltp模版目录
     |    `-- ltp.html  #ltp模版文件
