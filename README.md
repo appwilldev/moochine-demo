@@ -193,9 +193,11 @@
     logger:f(info)  -- FATAL
 
 查看调试日志
+
     tail -f moochine_demo.log
 
 查看nginx错误日志
+
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
 
 ## 四、Multi-App 与 Sub-App
