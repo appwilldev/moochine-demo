@@ -79,6 +79,7 @@
 ### 2.4 测试
     curl "http://localhost:9800/hello?name=xxxxxxxx"
     curl "http://localhost:9800/ltp"
+    tail -f moochine_demo.log #查看 调试日志的输出
     tail -f nginx_runtime/logs/access.log  #查看 Nginx 访问日志的输出
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
     
