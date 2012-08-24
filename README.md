@@ -194,6 +194,7 @@
     logger:w(format, ...)  -- WARN
     logger:e(format, ...)  -- ERROR
     logger:f(format, ...)  -- FATAL
+    -- format 和string.format(s, ...) 保持一致：http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 
 查看调试日志
 
