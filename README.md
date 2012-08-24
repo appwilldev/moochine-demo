@@ -70,7 +70,7 @@
             `-- nginx.pid #Nginx进程ID文件
     
 
-### 2.3 启动/关闭/重载/重启 方法
+### 2.3 启动/停止/重载/重启 方法
     ./bin/start.sh #启动
     ./bin/stop.sh #停止
     ./bin/reload.sh #平滑重载配置
@@ -84,7 +84,7 @@
     tail -f moochine_demo.log #查看 调试日志的输出
     tail -f nginx_runtime/logs/access.log  #查看 Nginx 访问日志的输出
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
-    
+
 
 ## 三、开发Web应用
 ### 3.1 URL Routing: routing.lua
