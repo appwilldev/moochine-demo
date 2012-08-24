@@ -9,7 +9,6 @@ module("awutils", package.seeall)
 local JSON          = require("cjson")
 local Redis         = require("resty.redis")
 local Bit           = require("bit")
-local logger        = require("logger")
 
 local table_insert  = table.insert
 local table_concat  = table.concat
@@ -395,7 +394,6 @@ function url_fetch(url, method, post_args, to_json, headers)
     sock:settimeout(30000) -- timeout 30 seconds
 
     local host, uri = string.match(url, "http%://(.-)(/.*)")
-    --logger:e("url_fetch_1 url:", url)
     local ok, err = sock:connect(host, 80)
     if not ok then return nil end
 
