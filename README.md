@@ -216,7 +216,6 @@
         ...
     }
 
-    其中sub-app的名字(比如subapp1)要跟该subapp内routing.lua内使用的名字对应。
 
 ## 五、参考 
 1. http://wiki.nginx.org/HttpLuaModule 
