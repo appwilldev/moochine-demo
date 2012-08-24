@@ -58,6 +58,8 @@
     |-- static  #静态文件(图片,css,js等)目录
     |    `-- main.js  #js文件
     |
+    |-- moochine_demo.log #调试日志文件。在 application.lua 可以配置路径和Level。
+    |
     `-- nginx_runtime #Nginx运行时目录。这个目录下的文件由程序自动生成，无需手动管理。
         |-- conf
         |   `-- p-nginx.conf #Nginx配置文件(自动生成)，执行 ./bin/start.sh 时会根据conf/nginx.conf 自动生成。
