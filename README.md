@@ -40,8 +40,7 @@
     |-- application.lua # moochine app 描述文件
     |
     |-- app #应用目录
-    |   |-- test.lua #请求处理函数
-    |   `-- logger.lua  #调试日志打印
+    |   `-- test.lua #请求处理函数
     |
     |-- bin #脚本目录
     |   |-- debug.sh #关闭服务->清空error log->启动服务->查看error log
@@ -185,8 +184,13 @@
     response:defer(func, ...)               -- 在response返回后执行
 
 ### 3.5 打印调试日志
-    local logger = require("logger“)
-    logger:e(info)
+在 `application.lua 里定义` log文件的位置和Level
+    
+    logger:i(info)  -- INFO
+    logger:d(info)  -- DEBUG
+    logger:w(info)  -- WARN
+    logger:e(info)  -- ERROR
+    logger:f(info)  -- FATAL
 
 查看调试日志
 

@@ -9,8 +9,6 @@ module("test", package.seeall)
 local JSON = require("cjson")
 local Redis = require("resty.redis")
 
-local logger = require("logger")
-
 function hello(req, resp, name)
     logger:e("hello request started!")
     if req.method=='GET' then

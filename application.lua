@@ -9,6 +9,11 @@ debug={
     to="response", -- "ngx.log"
 }
 
+logger = {
+    file = "moochine_demo.log",
+    level = "DEBUG",
+}
+
 config={
     templates="templates",
 }
