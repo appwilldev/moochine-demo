@@ -47,7 +47,7 @@
     |   |-- reload.sh #平滑重载配置
     |   |-- start.sh #启动
     |   |-- stop.sh #关闭
-    |   |-- console.sh #moochine控制台
+    |   |-- console.sh #moochine控制台。注意:moochine控制台需要安装Python2.7或Python3.2。
     |   `-- cut_nginx_log_daily.sh #Nginx日志切割脚本
     |
     |-- conf  #配置目录
@@ -87,7 +87,7 @@
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
 
 ### 2.5 通过moochine控制台调试
-    ./bin/console.sh #运行后会打开一个console，可以输入调试代码检查结果
+    ./bin/console.sh #运行后会打开一个console，可以输入调试代码检查结果。注意:moochine控制台需要安装Python2.7或Python3.2。
 
 ## 三、开发Web应用
 ### 3.1 URL Routing: routing.lua
