@@ -207,6 +207,11 @@
 
     tail -f nginx_runtime/logs/error.log  #查看 Nginx 错误日志和调试日志 的输出
 
+### 3.6 常见错误
+1. MOOCHINE URL Mapping Error
+1. Error while doing defers
+1. Moochine ERROR
+
 ## 四、Multi-App 与 Sub-App
 
 ### 4.1 multi-app
