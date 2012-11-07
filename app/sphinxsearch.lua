@@ -48,6 +48,15 @@ function set_keepalive(self, ...)
     return sphinx:setkeepalive(...)
 end
 
+function close(self)
+    local sphinx = self.sphinx
+    if not sphinx then
+        return nil, "not initialized"
+    end
+
+    return sphinx:close()
+end
+
 function query(self, sql)
     local sphinx = self.sphinx
     if not sphinx then
