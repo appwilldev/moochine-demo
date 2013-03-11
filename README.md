@@ -12,7 +12,6 @@
     #Checkout Moochine 代码
     git clone git://github.com/appwilldev/moochine.git 
 
-
 ### 1.3 配置环境变量
     #设置OpenResty环境变量
     export OPENRESTY_HOME=/usr/local/openresty
@@ -20,12 +19,11 @@
     #设置Moochine环境变量
     export MOOCHINE_HOME=/path/to/moochine
     
-    #使环境变量生效
-    source ~/.bash_profile
-    
     #将以上两个环境变量 加到 ~/.bash_profile 里，下次登陆自动生效
     vim ~/.bash_profile
 
+    #使环境变量立即生效
+    source ~/.bash_profile
 
 ## 二、示例(模版)程序
 ### 2.1 Checkout 示例代码
