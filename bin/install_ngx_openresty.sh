@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ~/openresty_downloads
+mkdir -p ~/openresty_downloads
 cd ~/openresty_downloads
 
 apt-get install build-essential libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev
