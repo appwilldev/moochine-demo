@@ -3,7 +3,7 @@
 mkdir -p ~/openresty_downloads
 cd ~/openresty_downloads
 
-apt-get install build-essential libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev
+apt-get install build-essential libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev git
 
 wget http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz
 tar xzvf drizzle7-2011.07.21.tar.gz
@@ -27,7 +27,7 @@ wget http://agentzh.org/misc/nginx/ngx_openresty-1.2.7.1.tar.gz
 tar xzvf ngx_openresty-1.2.7.1.tar.gz
 cd ngx_openresty-1.2.7.1
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql -j6
-make
+make -j6
 make install
 
 cd ..
