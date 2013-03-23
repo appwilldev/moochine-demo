@@ -3,7 +3,17 @@
 mkdir -p ~/openresty_downloads
 cd ~/openresty_downloads
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL Required Library..."
+echo "------------------------------------------------------------------------"
+
 apt-get install build-essential libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev git
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL libdrizzle..."
+echo "------------------------------------------------------------------------"
 
 wget http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz
 tar xzvf drizzle7-2011.07.21.tar.gz
@@ -14,6 +24,11 @@ make install-libdrizzle-1.0
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL PostgreSQL..."
+echo "------------------------------------------------------------------------"
+
 wget http://ftp.postgresql.org/pub/source/v9.2.3/postgresql-9.2.3.tar.gz
 tar vfxz postgresql-9.2.3.tar.gz
 cd postgresql-9.2.3
@@ -22,6 +37,11 @@ make
 make install
 
 cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL OpenResty..."
+echo "------------------------------------------------------------------------"
 
 wget http://agentzh.org/misc/nginx/ngx_openresty-1.2.7.1.tar.gz
 tar xzvf ngx_openresty-1.2.7.1.tar.gz
@@ -32,6 +52,17 @@ make install
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL Lua Modules..."
+echo "------------------------------------------------------------------------"
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL yaml..."
+echo "------------------------------------------------------------------------"
+
+apt-get install libyaml-dev
 git clone git://github.com/ldmiao/yaml.git
 cd yaml
 make -f Makefile.linux_openresty
@@ -39,11 +70,21 @@ make -f Makefile.linux_openresty install
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL lua-resty-postgres..."
+echo "------------------------------------------------------------------------"
+
 git clone git://github.com/azurewang/lua-resty-postgres.git
 cd lua-resty-postgres
 cp lib/resty/postgres.lua /usr/local/openresty/lualib/resty/
 
 cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL lua-cmsgpack..."
+echo "------------------------------------------------------------------------"
 
 git clone git://github.com/ldmiao/lua-cmsgpack.git
 cd lua-cmsgpack
@@ -52,12 +93,22 @@ make -f Makefile.linux_openresty install
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL lua-zlib..."
+echo "------------------------------------------------------------------------"
+
 git clone git://github.com/ldmiao/lua-zlib.git
 cd lua-zlib
 make linux
 make install
 
 cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL luafilesystem..."
+echo "------------------------------------------------------------------------"
 
 git clone git://github.com/ldmiao/luafilesystem.git
 cd luafilesystem
@@ -66,12 +117,23 @@ make install
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL magick..."
+echo "------------------------------------------------------------------------"
+
+apt-get install libmagickcore-dev libmagickwand-dev
 git clone git://github.com/leafo/magick.git
 cd magick
 cp magick.lua /usr/local/openresty/lualib/
 cp -r magick /usr/local/openresty/lualib/
 
 cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL luascws..."
+echo "------------------------------------------------------------------------"
 
 wget http://www.xunsearch.com/scws/down/scws-1.2.1.tar.bz2
 tar vfxj scws-1.2.1.tar.bz2
@@ -86,3 +148,7 @@ cp scws.lua /usr/local/openresty/lualib/
 
 cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "DONE!"
+echo "------------------------------------------------------------------------"
