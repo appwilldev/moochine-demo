@@ -73,3 +73,16 @@ cp -r magick /usr/local/openresty/lualib/
 
 cd ..
 
+wget http://www.xunsearch.com/scws/down/scws-1.2.1.tar.bz2
+tar vfxj scws-1.2.1.tar.bz2
+cd scws-1.2.1
+./configure && make && make install
+chmod a+r /usr/local/scws/dict.utf8.xdb
+cd ..
+git clone git://github.com/appwilldev/luascws.git
+cd luascws
+cp scws_header.lua /usr/local/openresty/lualib/
+cp scws.lua /usr/local/openresty/lualib/
+
+cd ..
+
