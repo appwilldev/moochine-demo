@@ -17,7 +17,16 @@ git clone git://github.com/ldmiao/yaml.git
 cd yaml
 make -f Makefile.linux_openresty
 make -f Makefile.linux_openresty install
+cd ..
 
+echo ""
+echo "------------------------------------------------------------------------"
+echo "INSTALL lua-resty-awtp02..."
+echo "------------------------------------------------------------------------"
+
+git clone git://github.com/appwilldev/lua-resty-awtp02.git
+cd lua-resty-awtp02
+cp lib/resty/awtp02.lua /usr/local/openresty/lualib/resty/
 cd ..
 
 echo ""
@@ -28,7 +37,6 @@ echo "------------------------------------------------------------------------"
 git clone git://github.com/azurewang/lua-resty-postgres.git
 cd lua-resty-postgres
 cp lib/resty/postgres.lua /usr/local/openresty/lualib/resty/
-
 cd ..
 
 echo ""
@@ -40,7 +48,6 @@ git clone git://github.com/ldmiao/lua-cmsgpack.git
 cd lua-cmsgpack
 make -f Makefile.linux_openresty
 make -f Makefile.linux_openresty install
-
 cd ..
 
 echo ""
@@ -52,7 +59,6 @@ git clone git://github.com/ldmiao/lua-zlib.git
 cd lua-zlib
 make linux
 make install
-
 cd ..
 
 echo ""
@@ -64,7 +70,6 @@ git clone git://github.com/ldmiao/luafilesystem.git
 cd luafilesystem
 make
 make install
-
 cd ..
 
 echo ""
@@ -77,7 +82,6 @@ git clone git://github.com/leafo/magick.git
 cd magick
 cp magick.lua /usr/local/openresty/lualib/
 cp -r magick /usr/local/openresty/lualib/
-
 cd ..
 
 echo ""
@@ -95,10 +99,10 @@ git clone git://github.com/appwilldev/luascws.git
 cd luascws
 cp scws_header.lua /usr/local/openresty/lualib/
 cp scws.lua /usr/local/openresty/lualib/
-
 cd ..
 
 echo ""
 echo "------------------------------------------------------------------------"
 echo "DONE!"
 echo "------------------------------------------------------------------------"
+
