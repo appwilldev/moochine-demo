@@ -13,6 +13,7 @@ echo "INSTALL yaml..."
 echo "------------------------------------------------------------------------"
 
 apt-get install libyaml-dev
+rm -rf yaml
 git clone git://github.com/ldmiao/yaml.git
 cd yaml
 make -f Makefile.linux_openresty
@@ -24,6 +25,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL lua-resty-awtp02..."
 echo "------------------------------------------------------------------------"
 
+rm -rf lua-resty-awtp02
 git clone git://github.com/appwilldev/lua-resty-awtp02.git
 cd lua-resty-awtp02
 cp lib/resty/awtp02.lua /usr/local/openresty/lualib/resty/
@@ -34,6 +36,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL lua-resty-postgres..."
 echo "------------------------------------------------------------------------"
 
+rm -rf lua-resty-postgres
 git clone git://github.com/azurewang/lua-resty-postgres.git
 cd lua-resty-postgres
 cp lib/resty/postgres.lua /usr/local/openresty/lualib/resty/
@@ -44,6 +47,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL lua-cmsgpack..."
 echo "------------------------------------------------------------------------"
 
+rm -rf lua-cmsgpack
 git clone git://github.com/ldmiao/lua-cmsgpack.git
 cd lua-cmsgpack
 make -f Makefile.linux_openresty
@@ -55,6 +59,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL lua-zlib..."
 echo "------------------------------------------------------------------------"
 
+rm -rf lua-zlib
 git clone git://github.com/ldmiao/lua-zlib.git
 cd lua-zlib
 make linux
@@ -66,6 +71,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL luafilesystem..."
 echo "------------------------------------------------------------------------"
 
+rm -rf luafilesystem
 git clone git://github.com/ldmiao/luafilesystem.git
 cd luafilesystem
 make
@@ -77,6 +83,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL magick..."
 echo "------------------------------------------------------------------------"
 
+rm -rf magick
 apt-get install libmagickcore-dev libmagickwand-dev
 git clone git://github.com/leafo/magick.git
 cd magick
@@ -89,6 +96,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL luascws..."
 echo "------------------------------------------------------------------------"
 
+rm -rf scws-1.2.1.tar.bz2 scws-1.2.1 luascws
 wget http://www.xunsearch.com/scws/down/scws-1.2.1.tar.bz2
 tar vfxj scws-1.2.1.tar.bz2
 cd scws-1.2.1
