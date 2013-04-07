@@ -29,10 +29,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL PostgreSQL..."
 echo "------------------------------------------------------------------------"
 
-rm -rf postgresql-9.2.3.tar.gz postgresql-9.2.3
-wget http://ftp.postgresql.org/pub/source/v9.2.3/postgresql-9.2.3.tar.gz
-tar vfxz postgresql-9.2.3.tar.gz
-cd postgresql-9.2.3
+rm -rf postgresql-9.2.4.tar.gz postgresql-9.2.4
+wget http://ftp.postgresql.org/pub/source/v9.2.4/postgresql-9.2.4.tar.gz
+tar vfxz postgresql-9.2.4.tar.gz
+cd postgresql-9.2.4
 ./configure
 make
 make install
