@@ -34,7 +34,7 @@ wget http://ftp.postgresql.org/pub/source/v9.2.4/postgresql-9.2.4.tar.gz
 tar vfxz postgresql-9.2.4.tar.gz
 cd postgresql-9.2.4
 ./configure
-make
+make -j6
 make install
 cd ..
 
