@@ -101,13 +101,20 @@ wget http://www.xunsearch.com/scws/down/scws-1.2.1.tar.bz2
 tar vfxj scws-1.2.1.tar.bz2
 cd scws-1.2.1
 ./configure && make && make install
-chmod a+r /usr/local/scws/dict.utf8.xdb
 cd ..
 git clone git://github.com/appwilldev/luascws.git
 cd luascws
 cp scws_header.lua /usr/local/openresty/lualib/
 cp scws.lua /usr/local/openresty/lualib/
 cd ..
+
+rm -rf scws-dict-chs-utf8.tar.bz2 dict.utf8.xdb
+wget http://www.xunsearch.com/scws/down/scws-dict-chs-utf8.tar.bz2
+tar vfxj scws-dict-chs-utf8.tar.bz2
+mkdir -p /usr/local/scws
+cp dict.utf8.xdb /usr/local/scws/
+chmod a+r /usr/local/scws/dict.utf8.xdb
+
 
 echo ""
 echo "------------------------------------------------------------------------"
