@@ -40,6 +40,20 @@ cd ..
 
 echo ""
 echo "------------------------------------------------------------------------"
+echo "INSTALL Redis..."
+echo "------------------------------------------------------------------------"
+
+rm -rf redis-2.6.13.tar.gz redis-2.6.13
+wget http://redis.googlecode.com/files/redis-2.6.13.tar.gz
+tar xzvf redis-2.6.13.tar.gz
+cd redis-2.6.13
+./configure
+make
+make install
+cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
 echo "INSTALL OpenResty..."
 echo "------------------------------------------------------------------------"
 
@@ -49,20 +63,6 @@ tar xzvf ngx_openresty-1.2.8.1.tar.gz
 cd ngx_openresty-1.2.8.1
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql -j6
 make -j6
-make install
-cd ..
-
-echo ""
-echo "------------------------------------------------------------------------"
-echo "INSTALL Redis..."
-echo "------------------------------------------------------------------------"
-
-rm -rf redis-2.6.12.tar.gz redis-2.6.12
-wget http://redis.googlecode.com/files/redis-2.6.12.tar.gz
-tar xzvf redis-2.6.12.tar.gz
-cd redis-2.6.12
-./configure
-make
 make install
 cd ..
 
