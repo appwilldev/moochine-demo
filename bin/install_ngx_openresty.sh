@@ -57,10 +57,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL OpenResty..."
 echo "------------------------------------------------------------------------"
 
-rm -rf ngx_openresty-1.2.8.1.tar.gz ngx_openresty-1.2.8.1
-wget http://agentzh.org/misc/nginx/ngx_openresty-1.2.8.1.tar.gz
-tar xzvf ngx_openresty-1.2.8.1.tar.gz
-cd ngx_openresty-1.2.8.1
+rm -rf ngx_openresty-1.2.8.3.tar.gz ngx_openresty-1.2.8.3
+wget http://agentzh.org/misc/nginx/ngx_openresty-1.2.8.3.tar.gz
+tar xzvf ngx_openresty-1.2.8.3.tar.gz
+cd ngx_openresty-1.2.8.3
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql -j6
 make -j6
 make install
