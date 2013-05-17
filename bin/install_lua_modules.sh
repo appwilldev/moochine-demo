@@ -84,7 +84,7 @@ echo "INSTALL magick..."
 echo "------------------------------------------------------------------------"
 
 rm -rf magick
-apt-get install libmagickcore-dev libmagickwand-dev
+apt-get install imagemagick libmagickcore-dev libmagickwand-dev
 git clone git://github.com/leafo/magick.git
 cd magick
 cp magick.lua /usr/local/openresty/lualib/
