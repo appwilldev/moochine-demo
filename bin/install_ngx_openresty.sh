@@ -43,10 +43,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
-rm -rf redis-2.6.13.tar.gz redis-2.6.13
-wget http://redis.googlecode.com/files/redis-2.6.13.tar.gz
-tar xzvf redis-2.6.13.tar.gz
-cd redis-2.6.13
+rm -rf redis-2.6.14.tar.gz redis-2.6.14
+wget http://redis.googlecode.com/files/redis-2.6.14.tar.gz
+tar xzvf redis-2.6.14.tar.gz
+cd redis-2.6.14
 ./configure
 make
 make install
