@@ -8,7 +8,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Required Library..."
 echo "------------------------------------------------------------------------"
 
-apt-get install build-essential bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 git htop tmux rcconf rlwrap strace
+apt-get install build-essential bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 libgeoip-dev git htop tmux rcconf rlwrap strace
 
 echo ""
 echo "------------------------------------------------------------------------"
@@ -61,9 +61,21 @@ rm -rf ngx_openresty-1.2.8.6.tar.gz ngx_openresty-1.2.8.6
 wget http://agentzh.org/misc/nginx/ngx_openresty-1.2.8.6.tar.gz
 tar xzvf ngx_openresty-1.2.8.6.tar.gz
 cd ngx_openresty-1.2.8.6
-./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql -j6
+./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql --with-http_geoip_module -j6
 make -j6
 make install
+cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
+echo "Download MaxMind GeoIP data..."
+echo "------------------------------------------------------------------------"
+
+rm -rf GeoIP.dat.gz GeoIP.dat
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+gzip -d GeoIP.dat.gz
+mkdir -p /usr/local/geoip
+cp GeoIP.dat /usr/local/geoip/
 cd ..
 
 echo ""
