@@ -43,10 +43,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
-rm -rf redis-2.6.14.tar.gz redis-2.6.14
-wget http://redis.googlecode.com/files/redis-2.6.14.tar.gz
-tar xzvf redis-2.6.14.tar.gz
-cd redis-2.6.14
+rm -rf redis-2.6.16.tar.gz redis-2.6.16
+wget http://redis.googlecode.com/files/redis-2.6.16.tar.gz
+tar xzvf redis-2.6.16.tar.gz
+cd redis-2.6.16
 ./configure
 make
 make install
@@ -57,10 +57,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL OpenResty..."
 echo "------------------------------------------------------------------------"
 
-rm -rf ngx_openresty-1.4.2.5.tar.gz ngx_openresty-1.4.2.5
-wget http://agentzh.org/misc/nginx/ngx_openresty-1.4.2.5.tar.gz
-tar xzvf ngx_openresty-1.4.2.5.tar.gz
-cd ngx_openresty-1.4.2.5
+rm -rf ngx_openresty-1.4.2.8.tar.gz ngx_openresty-1.4.2.8
+wget http://agentzh.org/misc/nginx/ngx_openresty-1.4.2.8.tar.gz
+tar xzvf ngx_openresty-1.4.2.8.tar.gz
+cd ngx_openresty-1.4.2.8
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql --with-http_geoip_module -j6
 make -j6
 make install
