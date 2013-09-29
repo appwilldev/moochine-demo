@@ -44,7 +44,7 @@ echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
 rm -rf redis-2.6.16.tar.gz redis-2.6.16
-wget http://redis.googlecode.com/files/redis-2.6.16.tar.gz
+wget http://download.redis.io/releases/redis-2.6.16.tar.gz
 tar xzvf redis-2.6.16.tar.gz
 cd redis-2.6.16
 ./configure
