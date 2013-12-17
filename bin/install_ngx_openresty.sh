@@ -29,10 +29,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL PostgreSQL..."
 echo "------------------------------------------------------------------------"
 
-rm -rf postgresql-9.2.5.tar.gz postgresql-9.2.5
-wget http://ftp.postgresql.org/pub/source/v9.2.5/postgresql-9.2.5.tar.gz
-tar vfxz postgresql-9.2.5.tar.gz
-cd postgresql-9.2.5
+rm -rf postgresql-9.3.2.tar.gz postgresql-9.3.2
+wget http://ftp.postgresql.org/pub/source/v9.3.2/postgresql-9.3.2.tar.gz
+tar vfxz postgresql-9.3.2.tar.gz
+cd postgresql-9.3.2
 ./configure
 make -j6
 make install
@@ -43,10 +43,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
-rm -rf redis-2.6.16.tar.gz redis-2.6.16
-wget http://download.redis.io/releases/redis-2.6.16.tar.gz
-tar xzvf redis-2.6.16.tar.gz
-cd redis-2.6.16
+rm -rf redis-2.8.3.tar.gz redis-2.8.3
+wget http://download.redis.io/releases/redis-2.8.3.tar.gz
+tar xzvf redis-2.8.3.tar.gz
+cd redis-2.8.3
 ./configure
 make
 make install
