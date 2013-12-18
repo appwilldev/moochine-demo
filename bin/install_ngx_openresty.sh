@@ -8,7 +8,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Required Library..."
 echo "------------------------------------------------------------------------"
 
-apt-get install build-essential bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 libgeoip-dev git htop iotop tmux rcconf rlwrap strace vim
+apt-get install build-essential bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 libgeoip-dev git htop iotop tmux rcconf rlwrap strace vim curl python-setuptools
 
 echo ""
 echo "------------------------------------------------------------------------"
