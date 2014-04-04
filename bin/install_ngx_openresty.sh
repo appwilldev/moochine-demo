@@ -31,10 +31,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL PostgreSQL..."
 echo "------------------------------------------------------------------------"
 
-rm -rf postgresql-9.3.3.tar.gz postgresql-9.3.3
-wget http://ftp.postgresql.org/pub/source/v9.3.3/postgresql-9.3.3.tar.gz
-tar vfxz postgresql-9.3.3.tar.gz
-cd postgresql-9.3.3
+rm -rf postgresql-9.3.4.tar.gz postgresql-9.3.4
+wget http://ftp.postgresql.org/pub/source/v9.3.4/postgresql-9.3.4.tar.gz
+tar vfxz postgresql-9.3.4.tar.gz
+cd postgresql-9.3.4
 ./configure
 make -j6
 make install
@@ -45,10 +45,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
-rm -rf redis-2.8.7.tar.gz redis-2.8.7
-wget http://download.redis.io/releases/redis-2.8.7.tar.gz
-tar xzvf redis-2.8.7.tar.gz
-cd redis-2.8.7
+rm -rf redis-2.8.8.tar.gz redis-2.8.8
+wget http://download.redis.io/releases/redis-2.8.8.tar.gz
+tar xzvf redis-2.8.8.tar.gz
+cd redis-2.8.8
 ./configure
 make
 make install
@@ -59,10 +59,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL OpenResty..."
 echo "------------------------------------------------------------------------"
 
-rm -rf ngx_openresty-1.5.8.1.tar.gz ngx_openresty-1.5.8.1
-wget http://agentzh.org/misc/nginx/ngx_openresty-1.5.8.1.tar.gz
-tar xzvf ngx_openresty-1.5.8.1.tar.gz
-cd ngx_openresty-1.5.8.1
+rm -rf ngx_openresty-1.5.11.1.tar.gz ngx_openresty-1.5.11.1
+wget http://agentzh.org/misc/nginx/ngx_openresty-1.5.11.1.tar.gz
+tar xzvf ngx_openresty-1.5.11.1.tar.gz
+cd ngx_openresty-1.5.11.1
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql --with-http_geoip_module -j6
 make -j6
 make install
