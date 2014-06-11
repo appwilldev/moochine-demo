@@ -45,10 +45,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Redis..."
 echo "------------------------------------------------------------------------"
 
-rm -rf redis-2.8.8.tar.gz redis-2.8.8
-wget http://download.redis.io/releases/redis-2.8.8.tar.gz
-tar xzvf redis-2.8.8.tar.gz
-cd redis-2.8.8
+rm -rf redis-2.8.10.tar.gz redis-2.8.10
+wget http://download.redis.io/releases/redis-2.8.10.tar.gz
+tar xzvf redis-2.8.10.tar.gz
+cd redis-2.8.10
 ./configure
 make
 make install
