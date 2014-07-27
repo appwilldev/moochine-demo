@@ -33,6 +33,19 @@ cd ..
 
 echo ""
 echo "------------------------------------------------------------------------"
+echo "INSTALL pgmoon ..."
+echo "------------------------------------------------------------------------"
+
+rm -rf pgmoon
+git clone git://github.com/leafo/pgmoon.git
+mkdir -p /usr/local/openresty/lualib/pgmoon
+cd pgmoon
+cp pgmoon.lua /usr/local/openresty/lualib/
+cp pgmoon/*.lua /usr/local/openresty/lualib/pgmoon/
+cd ..
+
+echo ""
+echo "------------------------------------------------------------------------"
 echo "INSTALL lua-resty-postgres..."
 echo "------------------------------------------------------------------------"
 
