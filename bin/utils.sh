@@ -2,6 +2,10 @@
 # utils functions and variables
 # author: KDr2
 
+if [[ $MOOCHINE_HOME = "" ]] || [[ $OPENRESTY_HOME = "" ]]; then
+    source ~/.bashrc
+fi
+
 path_in_p(){
     if [[ $2 == $1 ]] || [[ $2 == *:$1 ]] || [[ $2 == $1:* ]] || [[ $2 == *:$1:* ]]; then
         export PATH_IN_P=1
