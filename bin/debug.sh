@@ -1,14 +1,13 @@
 #!/bin/bash
 
-PWD=`pwd`
-NGINX_FILES=$PWD"/nginx_runtime"
+source `dirname $0`/utils.sh
+NGINX_FILES=$APP_ROOT/nginx_runtime
 
-./bin/stop.sh
+$APP_ROOT/bin/stop.sh
 
 echo "" > $NGINX_FILES/logs/error.log
 
-./bin/start.sh
+$APP_ROOT/bin/start.sh
 
 echo "tail -f $NGINX_FILES/logs/error.log"
 tail -f $NGINX_FILES/logs/error.log
-

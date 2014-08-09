@@ -4,16 +4,17 @@
 #export OPENRESTY_HOME=/usr/local/openresty
 #export MOOCHINE_HOME=/your/path/to/moochine
 
-PWD=`pwd`
+source `dirname $0`/utils.sh
 
-NGINX_FILES=$PWD"/nginx_runtime"
+NGINX_FILES=$APP_ROOT/nginx_runtime
 
 mkdir -p $NGINX_FILES"/conf"
 mkdir -p $NGINX_FILES"/logs"
 
-cp $PWD"/conf/mime.types" $NGINX_FILES"/conf/"
+cp $APP_ROOT/conf/mime.types $NGINX_FILES/conf/
 
 sed -e "s|__MOOCHINE_HOME_VALUE__|$MOOCHINE_HOME|" \
     -e "s|__MOOCHINE_APP_PATH_VALUE__|$PWD|" \
-    $PWD/conf/nginx.conf > $NGINX_FILES/conf/p-nginx.conf 
-
+    -e "s|__NGINX_USER__|$USER|" \
+    -e "s|__NGINX_GRP__|$USER|" \
+    $APP_ROOT/conf/nginx.conf > $NGINX_FILES/conf/p-nginx.conf
