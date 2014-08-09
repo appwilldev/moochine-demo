@@ -2,6 +2,20 @@
 
 这个项目演示了如何使用OpenResty和Moochine开发Web应用。
 
+## 〇、Run this demo with/in Docker
+
+Get Docker image and run:
+
+    docker pull kdr2/debian:sid-moochine
+    # run in attached docker container shell:
+    $ docker run -t -i -p 0.0.0.0:9801:9800 kdr2/debian:sid-moochine /bin/bash
+    root@4df89d75e286:/# /root/moochine-demo/bin/start.sh
+    # or in a detached dcoker container:
+    $ docker run -d -p 0.0.0.0:9801:9800 kdr2/debian:sid-moochine /root/moochine-demo/bin/start.sh -f
+
+Then visit http://localhost:9801/ltp with you browser.
+More details: https://registry.hub.docker.com/u/kdr2/debian/
+
 ## 一、安装配置
 
 ### 1.1 OpenResty 安装
@@ -10,15 +24,15 @@
 
 ### 1.2 Moochine 安装
     #Checkout Moochine 代码
-    git clone git://github.com/appwilldev/moochine.git 
+    git clone git://github.com/appwilldev/moochine.git
 
 ### 1.3 配置环境变量
     #设置OpenResty环境变量
     export OPENRESTY_HOME=/usr/local/openresty
-    
+
     #设置Moochine环境变量
     export MOOCHINE_HOME=/path/to/moochine
-    
+
     #将以上两个环境变量 加到 ~/.bash_profile 里，下次登陆自动生效
     vim ~/.bash_profile
 
@@ -29,9 +43,9 @@
 ### 2.1 Checkout 示例代码
     git clone git://github.com/appwilldev/moochine-demo.git
     cd moochine-demo
-    
+
 ### 2.2 程序目录结构
-    
+
     moochine-demo #程序根目录
     |
     |-- routing.lua # URL Routing配置
@@ -67,7 +81,7 @@
             |-- access.log #Nginx 访问日志
             |-- error.log #Nginx 错误日志
             `-- nginx.pid #Nginx进程ID文件
-    
+
 
 ### 2.3 启动/停止/重载/重启 方法
     ./bin/start.sh #启动
@@ -75,7 +89,7 @@
     ./bin/reload.sh #平滑重载配置
     ./bin/debug.sh #关闭服务->清空error log->启动服务->查看error log
 
-注意：以上命令只能在程序根目录执行，类似 `./bin/xxx.sh` 的方式。    
+注意：以上命令只能在程序根目录执行，类似 `./bin/xxx.sh` 的方式。
 
 ### 2.4 测试
     curl "http://localhost:9800/hello?name=xxxxxxxx"
@@ -94,16 +108,16 @@
     -- copyright: 2012 Appwill Inc.
     -- author : ldmiao
     --
-    
+
     local router = require('mch.router')
     router.setup()
-    
+
     ---------------------------------------------------------------------
-    
+
     map('^/hello%?name=(.*)',           'test.hello')
-    
+
     ---------------------------------------------------------------------
-    
+
 
 ### 3.2 请求处理函数：app/test.lua
 请求处理函数接收2个参数，request和response，分别对应HTTP的request和response。从request对象拿到客户端发送过来的数据，通过response对象返回数据。request和response对象也可以通过ngx.ctx.request, ngx.ctx.response来获取。
@@ -113,12 +127,12 @@
     -- copyright: 2012 Appwill Inc.
     -- author : ldmiao
     --
-    
+
     module("test", package.seeall)
-    
+
     local JSON = require("cjson")
     local Redis = require("resty.redis")
-    
+
     function hello(req, resp, name)
         if req.method=='GET' then
             -- resp:writeln('Host: ' .. req.host)
@@ -133,7 +147,7 @@
             req:read_body()
             resp.headers['Content-Type'] = 'application/json'
             resp:writeln(JSON.encode(req.post_args))
-        end 
+        end
     end
 
 ### 3.3 request对象的属性和方法
@@ -160,7 +174,7 @@
     uri_args        = ngx.req.get_uri_args()    -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args
     post_args       = ngx.req.get_post_args()   -- http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args
     socket          = ngx.req.socket            -- http://wiki.nginx.org/HttpLuaModule#ngx.req.socket
-    
+
     --方法
     request:read_body()                         -- http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
     request:get_uri_arg(name, default)
@@ -170,12 +184,12 @@
     request:get_cookie(key, decrypt)
     request:rewrite(uri, jump)                  -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri
     request:set_uri_args(args)                  -- http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri_args
-    
+
 
 ### 3.4 response对象的属性和方法
     --属性
     headers         = ngx.header                -- http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER
-    
+
     --方法
     response:set_cookie(key, value, encrypt, duration, path)
     response:write(content)
@@ -189,7 +203,7 @@
 
 ### 3.5 打印调试日志
 在 `application.lua` 里定义log文件的位置和Level
-    
+
     logger:i(format, ...)  -- INFO
     logger:d(format, ...)  -- DEBUG
     logger:w(format, ...)  -- WARN
@@ -224,9 +238,8 @@
     }
 
 
-## 五、参考 
-1. http://wiki.nginx.org/HttpLuaModule 
-1. http://wiki.nginx.org/HttpCoreModule 
+## 五、参考
+1. http://wiki.nginx.org/HttpLuaModule
+1. http://wiki.nginx.org/HttpCoreModule
 1. http://openresty.org
 1. https://github.com/appwilldev/moochine
-
