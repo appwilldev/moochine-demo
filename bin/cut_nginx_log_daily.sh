@@ -5,7 +5,8 @@
 #00 00 * * * /bin/bash /path/to/moochine-demo/bin/cut_nginx_log_daily.sh
 
 # Set App Home
-moochine_app_home="/path/to/moochine-demo"
+source `dirname $0`/utils.sh
+moochine_app_home=$APP_ROOT
 
 #/////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,7 +25,7 @@ for log_file in $log_files; do
         daily_log_file=${log_file//.log/.log.$date}
         echo mv ${logs_path}/$log_file ${logs_path}/$year/$month/$daily_log_file
         mv ${logs_path}/$log_file ${logs_path}/$year/$month/$daily_log_file
-    fi  
+    fi
 done
 kill -USR1 `cat ${logs_path}/nginx.pid`
 
