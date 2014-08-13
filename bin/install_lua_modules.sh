@@ -46,13 +46,13 @@ cd ..
 
 echo ""
 echo "------------------------------------------------------------------------"
-echo "INSTALL lua-resty-postgres..."
+echo "INSTALL lua-resty-http..."
 echo "------------------------------------------------------------------------"
 
-rm -rf lua-resty-postgres
-git clone git://github.com/azurewang/lua-resty-postgres.git
-cd lua-resty-postgres
-cp lib/resty/postgres.lua /usr/local/openresty/lualib/resty/
+rm -rf lua-resty-http
+git clone git://github.com/pintsized/lua-resty-http.git
+cd lua-resty-http
+cp lib/resty/http.lua /usr/local/openresty/lualib/resty/
 cd ..
 
 echo ""
