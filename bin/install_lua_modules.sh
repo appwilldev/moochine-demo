@@ -138,10 +138,7 @@ rm -rf hoedown
 git clone https://github.com/hoedown/hoedown.git
 cd hoedown
 make
-cp libhoedown.so.1 /usr/local/openresty/lualib/
-cd /usr/local/openresty/lualib/
-ln -f -s libhoedown.so.1 libhoedown.so
-cd -
+cp libhoedown.so /usr/local/openresty/lualib/
 cd ..
 
 rm -rf lua-resty-hoedown
