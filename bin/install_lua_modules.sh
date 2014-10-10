@@ -131,6 +131,28 @@ chmod a+r /usr/local/scws/dict.utf8.xdb
 
 echo ""
 echo "------------------------------------------------------------------------"
+echo "INSTALL lua-resty-hoedown..."
+echo "------------------------------------------------------------------------"
+
+rm -rf hoedown
+git clone https://github.com/hoedown/hoedown.git
+cd hoedown
+make
+cp libhoedown.so.1 /usr/local/openresty/lualib/
+cd /usr/local/openresty/lualib/
+ln -f -s libhoedown.so.1 libhoedown.so
+cd -
+cd ..
+
+rm -rf lua-resty-hoedown
+git clone https://github.com/bungle/lua-resty-hoedown.git
+cd lua-resty-hoedown
+cp -r lib/resty/* /usr/local/openresty/lualib/resty/
+cd ..
+
+
+echo ""
+echo "------------------------------------------------------------------------"
 echo "DONE!"
 echo "------------------------------------------------------------------------"
 
