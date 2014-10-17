@@ -8,7 +8,7 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL Required Library..."
 echo "------------------------------------------------------------------------"
 
-apt-get install build-essential daemontools bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 libgeoip-dev git htop iotop tmux rcconf rlwrap strace vim curl python-dev python-setuptools realpath
+apt-get install build-essential daemontools bzip2 zip libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl libyaml-dev libmagickcore-dev libmagickwand-dev libcloog-ppl0 libgeoip-dev git htop iotop tmux rcconf rlwrap strace vim curl python-dev python-setuptools realpath flex bison
 
 easy_install pyyaml
 
@@ -79,6 +79,8 @@ gzip -d GeoIP.dat.gz
 mkdir -p /usr/local/geoip
 cp GeoIP.dat /usr/local/geoip/
 cd ..
+
+ldconfig
 
 echo ""
 echo "------------------------------------------------------------------------"

@@ -147,6 +147,7 @@ cd lua-resty-hoedown
 cp -r lib/resty/* /usr/local/openresty/lualib/resty/
 cd ..
 
+ldconfig
 
 echo ""
 echo "------------------------------------------------------------------------"
