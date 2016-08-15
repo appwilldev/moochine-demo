@@ -18,7 +18,7 @@ echo "INSTALL libdrizzle..."
 echo "------------------------------------------------------------------------"
 
 rm -rf drizzle7-2011.07.21.tar.gz drizzle7-2011.07.21
-wget http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz
+wget https://openresty.org/download/drizzle7-2011.07.21.tar.gz
 tar xzvf drizzle7-2011.07.21.tar.gz
 cd drizzle7-2011.07.21/
 ./configure --without-server
