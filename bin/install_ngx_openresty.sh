@@ -59,10 +59,10 @@ echo "------------------------------------------------------------------------"
 echo "INSTALL OpenResty..."
 echo "------------------------------------------------------------------------"
 
-rm -rf openresty-1.9.15.1.tar.gz openresty-1.9.15.1
-wget https://openresty.org/download/openresty-1.9.15.1.tar.gz
-tar xzvf openresty-1.9.15.1.tar.gz
-cd openresty-1.9.15.1
+rm -rf openresty-1.11.2.1.tar.gz openresty-1.11.2.1
+wget https://openresty.org/download/openresty-1.11.2.1.tar.gz
+tar xzvf openresty-1.11.2.1.tar.gz
+cd openresty-1.11.2.1
 ./configure --with-http_stub_status_module --with-http_realip_module --with-pcre-jit --with-luajit --with-http_postgres_module --with-http_drizzle_module --with-libpq=/usr/local/pgsql --with-http_geoip_module -j6
 make -j6
 make install
